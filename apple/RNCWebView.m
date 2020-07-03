@@ -209,6 +209,9 @@ static NSDictionary* customCertificatesForHost;
     [prefs setValue:@TRUE forKey:@"allowFileAccessFromFileURLs"];
     _prefsUsed = YES;
   }
+  if (_allowUniversalAccessFromFileURLs) {
+    [wkWebViewConfig setValue:@TRUE forKey:@"allowUniversalAccessFromFileURLs"];
+  }
   if (_prefsUsed) {
     wkWebViewConfig.preferences = prefs;
   }
